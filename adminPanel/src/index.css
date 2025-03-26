@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cursor-close {
+    cursor: url('https://modavenextjs.vercel.app/images/cursor-close.svg'), auto;
+  }
+
+}
+
+@layer components {
+  .list-navItem{
+    @apply w-full flex items-center justify-between cursor-pointer text-main hover:text-blue py-2 px-4 rounded-lg font-semibold smoothly-transaction
+  }
+
+  .active-navItem{
+    @apply bg-blue bg-opacity-10 text-blue
+  }
+
+  .list-subNavItem{
+    @apply flex items-center gap-3 hover:text-blue smoothly-transaction font-semibold
+  }
+
+  .subMenu_square{
+    @apply smoothly-transaction border border-lightGray group-hover:border-blue rotate-45 w-1.5 h-1.5 flex
+  }
+
+  .smoothly-transaction{
+    @apply transition-all duration-300 ease-in-out;
+  }
+}
+
+.svg {
+  width: 3.25em;
+  transform-origin: center;
+  animation: rotate4 2s linear infinite;
+ }
+ 
+.circle {
+  fill: none;
+  stroke: hsl(214, 97%, 59%);
+  stroke-width: 2;
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  animation: dash4 1.5s ease-in-out infinite;
+}
+ 
+@keyframes rotate4 {
+  100% {
+   transform: rotate(360deg);
+  }
+}
+ 
+@keyframes dash4 {
+  0% {
+   stroke-dasharray: 1, 200;
+   stroke-dashoffset: 0;
+  }
+ 
+  50% {
+   stroke-dasharray: 90, 200;
+   stroke-dashoffset: -35px;
+  }
+ 
+  100% {
+   stroke-dashoffset: -125px;
+  }
+}
+
+
